@@ -1,8 +1,11 @@
-import { useLocalSearchParams } from 'expo-router';
-import { Text } from 'react-native';
+import { useLocalSearchParams, router } from 'expo-router';
+import { Text, View, Button } from 'react-native';
 
 export default function UserPage() {
     const { id } = useLocalSearchParams();
 
-    return <Text>Hello, { id }!</Text>;
+    return <View>
+        <Text>Hello, {id}!</Text>
+        <Button title="Go back" onPress={() => router.back()} />
+    </View>
 }
